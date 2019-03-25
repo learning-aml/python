@@ -11,3 +11,4 @@ class    Greeter(object):
 g = Greeter('Fred')  # Construct an instance of the Greeter class
 g.greet()            # Call an instance method; prints "Hello, Fred"
 g.greet(loud=True)
+print(g)

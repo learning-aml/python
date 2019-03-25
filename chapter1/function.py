@@ -16,4 +16,9 @@ def hello(name, loud=False):
         print ('Hello, %s' % name)
 hello('BoB')
 hello('fred', True)
-    
+
+
+def f1(x):
+    def f2(y):
+        return y ** x
+    return f2
