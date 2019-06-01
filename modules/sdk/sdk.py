@@ -3,3 +3,5 @@ def add(a : int, b : int) ->  int:
 
 print(add(1, 2))
 print(add('a', 'b'))
+
+print("")
