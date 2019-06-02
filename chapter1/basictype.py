@@ -1,3 +1,5 @@
+# -*- coding: utf-8 -*-
+
 x = 3
 print(type(x))
 
@@ -8,6 +10,10 @@ print(type(t))
 print(t and False)
 print(t or False)
 
+name="zzh"
+age=22.333
+print("my name %%is %s, age is %03d"  % (name, age))
+print("my name %%is %s, age is %03.2f"  % (name, age))
 hello = "hello"
 world = "workd"
 print(hello)
