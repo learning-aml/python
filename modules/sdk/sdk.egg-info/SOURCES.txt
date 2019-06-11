@@ -1,0 +1,7 @@
+README.txt
+sdk.py
+setup.py
+sdk.egg-info/PKG-INFO
+sdk.egg-info/SOURCES.txt
+sdk.egg-info/dependency_links.txt
+sdk.egg-info/top_level.txt
