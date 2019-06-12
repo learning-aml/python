@@ -49,6 +49,14 @@ class User(object):
     def __str__(self):
         return "username: %s, password: %s" %(self.username, self.passwd)
 
+    @property
+    def age(self):
+        return self.__age
+    
+    @age.setter
+    def age(self, age):
+        self.__age=age
+
     @classmethod
     def test(cls):
         print("cls method")
@@ -68,3 +76,5 @@ User.name="dd"
 print(User.name)
 del u.name
 print(u.name)
+u.age=1
+print(u.age)
