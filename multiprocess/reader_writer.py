@@ -1,15 +1,20 @@
-from multiprocessing import Process,Pool,Queue,Manager
+from multiprocessing import Process,Pool,Queue,Manager,current_process
 import os
 import time
 import random
 
 def write(q):
+    name = current_process().name
+    print("thread name: %s" %(name))
     for item in 'ABC':
         print("put %s in queue" % (item))
         q.put(item)
         time.sleep(random.random())
         
 def reader(q):
+   #获取当前线程的名字
+    name = current_process().name
+    print("thread name: %s" %(name))
     while True:
         if not q.empty():
             item = q.get()
