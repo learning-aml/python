@@ -78,3 +78,71 @@ del u.name
 print(u.name)
 u.age=1
 print(u.age)
+
+u.dynname="testdyn"
+print(u.dynname)
+
+def dynfunc():
+    print("dynfunc")
+    
+u.dynfunc=dynfunc
+u.dynfunc()
+
+
+def dynfunc1(self):
+    print("dynfunc1")
+    
+import types
+u.dynfunc1=types.MethodType(dynfunc1, User)
+u.dynfunc1()
+
+@classmethod
+def classfunc(cls):
+    print("cls dync func")
+    
+User.clsfunc=classfunc
+User.clsfunc()
+
+
+@staticmethod
+def staticfunc():
+    print("static dyn func")
+    
+User.staticfunc=staticfunc
+User.staticfunc()
+
+
+#class Student(object):
+#    __slots__=("name", "age")
+#
+#stu=Student()
+#stu.sex="male"
+
+
+class CalableClass(object):
+    def __call__(self):
+        print("call me")
+        
+call=CalableClass()
+call()
+
+
+#类装饰器
+class DecoratorClass(object):
+    def __init__(self, func):
+        print("---init---")
+        print("func name is %s " % func.__name__)
+        self.__func=func
+    
+    def __call__(self):
+        print("---decorator func---")
+        self.__func()
+        
+        
+@DecoratorClass  #生成DecoratorClass的一个对象，所以会调用__init__方法，并且把下面装饰的函数作为参数传入
+def test():
+    print("---test---")
+    
+test()
+
+
